@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Main from './pages/Main';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      {/* Test Comment */}
-      {/* Test for pull request */}
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
