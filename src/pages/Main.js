@@ -1,3 +1,8 @@
 export default function Main() {
-  return <h1> I am Main </h1>;
+  return (
+    <main>
+      <div>Hello</div>
+      <div>What Website Would you like to add?</div>
+    </main>
+  );
 }
