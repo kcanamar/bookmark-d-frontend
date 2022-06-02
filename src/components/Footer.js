@@ -12,19 +12,20 @@ export default function Footer() {
     <StyledFooter>
       This amazing website was made by
       <a href="https://github.com/sunghunp/" target="_blank" rel="noreferrer">
-        Joe
+        {/* These spaces are necessary because of the formatting on the footer*/}
+        {" "}Joe
       </a>
       ,
       <a href="https://github.com/kcanamar/" target="_blank" rel="noreferrer">
-        Kyle
+        {" "}Kyle
       </a>
       ,
       <a href="https://github.com/yinathan/" target="_blank" rel="noreferrer">
-        Nathan
+        {" "}Nathan
       </a>
       , and
       <a href="https://github.com/benburgos/" target="_blank" rel="noreferrer">
-        Ben
+        {" "}Ben
       </a>
       .
     </StyledFooter>
