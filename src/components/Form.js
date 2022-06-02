@@ -13,7 +13,7 @@ export default function Form(props) {
         headers: {
           'Content-Type': 'Application/json',
         },
-        // body: JSON.stringify()
+        body: JSON.stringify(item)
       });
     } catch (err) {
       console.log(err);
