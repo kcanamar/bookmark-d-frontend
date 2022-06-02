@@ -8,7 +8,8 @@ export default function Card({ site }) {
         </a>
       </div>
       <div className="card-links">
-        <button></button>
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
     </div>
   );
