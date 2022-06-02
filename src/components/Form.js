@@ -9,9 +9,9 @@ export default function Form(props) {
     event.preventDefault();
     try {
       await fetch(URL, {
-        method: "Post",
+        method: 'Post',
         headers: {
-          "Content-Type": "Application/json",
+          'Content-Type': 'Application/json',
         },
         // body: JSON.stringify()
       });
@@ -29,9 +29,9 @@ export default function Form(props) {
   
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} name="title" placeholder="Website Name" />
+      <input onChange={handleChange} name="title" placeholder="Website Name" required/>
       <input onChange={handleChange} name="url" placeholder="https://" />
       <button type="submit">+</button>
     </form>
-  )
+  );
 }
