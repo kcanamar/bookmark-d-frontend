@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import Form from '../components/Form';
+import Card from '../components/Card'
 const StyledMain = styled.main`
   card {
     display: block;
@@ -17,15 +18,11 @@ export default function Main() {
       <div>Hello</div>
       <div>What Website Would you like to add?</div>
 
-      <form onSubmit={handleSubmit}>
-        <input name="title" placeholder="Website Name" />
-        <input name="url" placeholder="https://" />
-        <button type="submit">+</button>
-      </form>
+      <Form />
 
-      <card>Google.com ...</card>
-      <card>MDN ...</card>
-      <card>The atlantic ...</card>
+      <Card />
+      <Card />
+      <Card />
     </StyledMain>
   );
 }
