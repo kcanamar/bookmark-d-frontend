@@ -6,7 +6,6 @@ import Edit from './pages/Edit';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-
 function App() {
   const [bookmark, setBookmark] = useState(null);
 
