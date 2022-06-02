@@ -28,7 +28,7 @@ export default function Nav() {
     <StyledHeader>
       <Link to="/" className="link" > <h1>BookMark`d</h1> </Link>
       <nav className="nav">
-        <Link to="/Main" > MAIN </Link>
+        <Link to="/" > MAIN </Link>
         <Link to="/about" > ABOUT </Link>
       </nav>
     </StyledHeader>

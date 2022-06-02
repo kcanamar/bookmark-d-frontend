@@ -1,14 +1,15 @@
-import styled from 'styled-components'
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 const StyledMain = styled.main`
   card {
     display: block;
   }
-`
+`;
 
 const handleSubmit = () => {
-  console.log('hi')
-}
+  console.log('hi');
+};
 
 export default function Main() {
   return (
@@ -17,20 +18,14 @@ export default function Main() {
       <div>What Website Would you like to add?</div>
 
       <form onSubmit={handleSubmit}>
-        <input name='title' placeholder='Website Name'/>
-        <input name='url' placeholder='https://'/>
-        <button type='submit'>+</button>
+        <input name="title" placeholder="Website Name" />
+        <input name="url" placeholder="https://" />
+        <button type="submit">+</button>
       </form>
 
-      <card>
-        Google.com ...
-      </card>
-      <card>
-        MDN ...
-      </card>
-      <card>
-        The atlantic ...      
-      </card>
+      <card>Google.com ...</card>
+      <card>MDN ...</card>
+      <card>The atlantic ...</card>
     </StyledMain>
   );
 }
