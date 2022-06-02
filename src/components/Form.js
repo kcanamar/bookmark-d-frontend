@@ -1,7 +1,10 @@
+import { useState } from "react";
+
 export default function Form(props) {
+  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/bookmarkd`;
   
-  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/bookmarkd`
-  
+  const [item, setItem] = useState({title: "", url: ""});
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -16,11 +19,18 @@ export default function Form(props) {
       console.log(err);
     }
   }
+
+  function handleChange(event) {
+    setItem({
+      ...item,
+      [event.target.name]: event.target.value
+    });
+  }
   
   return (
     <form onSubmit={handleSubmit}>
-      <input name="title" placeholder="Website Name" />
-      <input name="url" placeholder="https://" />
+      <input onChange={handleChange} name="title" placeholder="Website Name" />
+      <input onChange={handleChange} name="url" placeholder="https://" />
       <button type="submit">+</button>
     </form>
   )
