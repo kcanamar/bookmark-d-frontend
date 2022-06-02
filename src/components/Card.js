@@ -1,8 +1,9 @@
-export default function Card({ title, url }) {
+export default function Card({ site }) {
+  const { title, url } = site;
   return (
     <div className="card">
       <div className="card-content">
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noreferrer">
           <h1>{title}</h1>
         </a>
       </div>
