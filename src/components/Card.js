@@ -1,3 +1,5 @@
+import CardDropdown from "./CardDropdown";
+
 export default function Card({ site }) {
   const { title, url } = site;
   return (
@@ -7,10 +9,7 @@ export default function Card({ site }) {
           <h1>{title}</h1>
         </a>
       </div>
-      <div className="card-links">
-        <button>Edit</button>
-        <button>Delete</button>
-      </div>
+      <CardDropdown />
     </div>
   );
 }
