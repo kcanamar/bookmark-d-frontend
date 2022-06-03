@@ -10,25 +10,37 @@ const StyledButton = styled.button`
 
   img {
     max-width: 20px;
+    :hover {
+      cursor: pointer;
+    }
   }
 `
 
-export default function CardDropdown() {
-  const [hidden, setHidden] = useState(true);
-
+export default function CardDropdown({ idx, active, handleActive}) {
   function handleClick () {
-    setHidden(!hidden);
+    handleActive(idx);
   }
-  
-  return (
-    <div onClick={handleClick} className="card-links">
-      <StyledButton className="dropdown" hidden={!hidden}>
-        <img src={dotsImg} alt="an img of thing"/>
-      </StyledButton>
-      <div hidden={hidden} >
+
+  function menu() {
+    return(
+    <StyledButton  className="dropdown" >
+      <img src={dotsImg} alt="an img of thing"/>
+    </StyledButton>
+    )
+  }
+
+  function dropdown() {
+    return (
+      <div >
         <Link className="dropdown" to="/edit">Edit</Link>
         <StyledButton className="dropdown" >Delete</StyledButton>
       </div>
+    )
+  }
+
+  return (
+    <div onClick={handleClick} className="card-links">
+      {active === idx ? dropdown() : menu() }
     </div>
   )
 }

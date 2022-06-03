@@ -14,6 +14,7 @@ const handleSubmit = () => {
 
 export default function Main() {
   const [state, setState] = useState(null);
+  const [active, setActive] = useState(null);
 
   const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/bookmarkd/`;
 
@@ -22,12 +23,16 @@ export default function Main() {
     setState(data);
   };
 
+  const handleActive = (index) => {
+    setActive(index);
+  };
+
   useEffect(() => {
     getSites();
   }, [state]);
 
   const loaded = () => {
-    return state.map((site) => <Card key={site._id} site={site} />);
+    return state.map((site, idx) => <Card key={site._id} site={site} active={active} handleActive={handleActive} idx={idx}/>);
   };
 
   const loading = () => <div className="loader"></div>;
