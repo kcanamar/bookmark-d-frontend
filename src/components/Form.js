@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Form(props) {
-  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/bookmarkd`;
+  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/api`;
   
   const [item, setItem] = useState({title: "", url: ""});
 
