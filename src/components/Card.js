@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
 `
-
-export default function Card({ site, idx, handleActive, deleteCard, active}) {
+export default function Card({ site, idx, handleActive, active, databaseID, setBookmark}) {
   const { title, url } = site;
 
   return (
@@ -14,8 +13,7 @@ export default function Card({ site, idx, handleActive, deleteCard, active}) {
           <h1>{title}</h1>
         </a>
       </div>
-      
-      <CardDropdown site={site} idx={idx} handleActive={handleActive} active={active} deleteCard={deleteCard}/>
+      <CardDropdown idx={idx} setBookmark={setBookmark} handleActive={handleActive} deleteCard={deleteCard} active={active} databaseID={databaseID} site={site}/>
     </StyledCard>
   );
 }

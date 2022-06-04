@@ -16,19 +16,15 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function CardDropdown({
-  site,
-  idx,
-  active,
-  handleActive,
-  deleteCard,
-}) {
+export default function CardDropdown({ idx, active, handleActive, databaseID, setBookmark, deleteCard, site }) {
+
   const ref = useDetectClickOutside({ onTriggered: closeDropdown });
   const { id } = useParams();
   let navigate = useNavigate();
 
-  function handleClick(e) {
-    if (active === idx) {
+  function handleClick (e) {
+    setBookmark(site)
+    if (active === idx ) {
       handleActive(null);
     } else {
       handleActive(idx);
@@ -36,7 +32,7 @@ export default function CardDropdown({
   }
 
   function closeDropdown(e) {
-    console.log(e.target.className);
+    setBookmark(null)
     if (e.target.className !== 'dropdown') {
       handleActive(null);
     }
@@ -58,10 +54,8 @@ export default function CardDropdown({
   function dropdown() {
     return (
       <div ref={ref}>
-        <Link to="/edit" className="dropdown">
-          Edit
-        </Link>
-        <StyledButton className="dropdown" id={site._id} onClick={removeCard}>
+        <Link to={`/edit/${databaseID}`} className="dropdown" >Edit</Link>
+        <StyledButton className="dropdown" id={databaseID} onClick={removeCard}>
           Delete
         </StyledButton>
       </div>

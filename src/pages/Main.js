@@ -8,7 +8,8 @@ const StyledMain = styled.main`
   }
 `;
 
-export default function Main() {
+export default function Main({ setBookmark }) {
+
   const [state, setState] = useState(null);
   const [active, setActive] = useState(null);
 
@@ -40,18 +41,18 @@ export default function Main() {
   useEffect(() => {
     getSites();
   }, [state]);
-
+  
   const loaded = () => {
-    return state.map((site, idx) => (
-      <Card
-        key={site._id}
-        site={site}
-        active={active}
-        handleActive={handleActive}
-        deleteCard={deleteCard}
-        idx={idx}
-      />
-    ));
+    return state.map((site, idx) => <Card 
+      key={site._id} 
+      setBookmark={setBookmark} 
+      deleteCard={deleteCard} 
+      databaseID={site._id} 
+      site={site} 
+      active={active} 
+      handleActive={handleActive} 
+      idx={idx}
+    />);
   };
 
   const loading = () => <div className="loader"></div>;

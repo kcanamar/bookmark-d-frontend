@@ -1,23 +1,11 @@
 import styled from "styled-components"
+import StyledButton from "../components/StyledButton"
 
-const Button = (props) => <button className={props.className}>{props.name}</button>
-
-const StyledButton = styled(Button)``
 const Bio = styled.div`
     display: flex;
     justify-content: space-between;
     margin: auto;
     width: 100%;
-
-    ${StyledButton}{
-        background-color: SlateBlue;
-        color: white;
-        padding: .75rem;
-        border-radius: .5rem;
-        margin-right: .5rem;
-        letter-spacing: 1px;
-        font-size: 16px;
-    }
 
     .links{
         padding: 5px;
