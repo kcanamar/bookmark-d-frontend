@@ -6,22 +6,40 @@ const StyledHeader = styled.header`
   display: flex;
   width: 100%;
   align-items: center;
+  border-bottom: 3px solid grey;
+  background-color: #adb5bd;
 
-  a {
-    color: FCA311;
+   a {
     text-decoration: none;
   }
 
+  a:visited {
+    text-decoration: none;
+    color: #14213d;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #fca311;
+  }
+
   .nav {
-    border: solid 2px black;
+    margin-right: 50px;
     position: absolute;
     right: 0;
     top: 10;
+    padding: 20px;
+  }
+
+  .nav {
+    a {
+      padding: 10px;
+    }
   }
 
   .link {
     text-align: center;
     flex: 1 0 auto;
+    font-size: 25px;
   }
 `;
 
@@ -31,8 +49,9 @@ export default function Nav() {
     <StyledHeader>
       <Link to="/" className="link" > <h1>BookMark`d</h1> </Link>
       <nav className="nav">
-        <Link to="/" > MAIN </Link>
-        <Link to="/about" > ABOUT </Link>
+        <Link to="/" > Main </Link>
+        
+        <Link to="/about" > About </Link>
       </nav>
     </StyledHeader>
   )
