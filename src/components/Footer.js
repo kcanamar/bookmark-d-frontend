@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #adb5bd;
+  color: #14213d;
+
   a {
     text-decoration: none;
   }
