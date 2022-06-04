@@ -1,17 +1,21 @@
 import CardDropdown from "./CardDropdown";
+import styled from 'styled-components';
 
-export default function Card({ site, idx, handleActive, active }) {
+const StyledCard = styled.div`
+`
+
+export default function Card({ site, idx, handleActive, deleteCard, active}) {
   const { title, url } = site;
 
   return (
-    <div className="card">
+    <StyledCard className="card">
       <div className="card-content">
         <a href={url} target="_blank" rel="noreferrer">
           <h1>{title}</h1>
         </a>
       </div>
       
-      <CardDropdown idx={idx} handleActive={handleActive} active={active}/>
-    </div>
+      <CardDropdown site={site} idx={idx} handleActive={handleActive} active={active} deleteCard={deleteCard}/>
+    </StyledCard>
   );
 }
