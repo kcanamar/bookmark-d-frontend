@@ -8,15 +8,12 @@ const StyledMain = styled.main`
   }
 `;
 
-const handleSubmit = () => {
-  console.log('hi');
-};
-
 export default function Main({ setBookmark }) {
+
   const [state, setState] = useState(null);
   const [active, setActive] = useState(null);
 
-  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/bookmarkd/`;
+  const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/api/`;
 
   const getSites = async () => {
     const data = await fetch(URL).then((response) => response.json());
@@ -27,12 +24,35 @@ export default function Main({ setBookmark }) {
     setActive(index);
   };
 
+  const deleteCard = async (id) => {
+    try {
+      await fetch(URL + id, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'Application/json',
+        },
+      });
+      getSites();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     getSites();
   }, [state]);
   
   const loaded = () => {
-    return state.map((site, idx) => <Card key={site._id} setBookmark={setBookmark} databaseID={site._id} site={site} active={active} handleActive={handleActive} idx={idx}/>);
+    return state.map((site, idx) => <Card 
+      key={site._id} 
+      setBookmark={setBookmark} 
+      deleteCard={deleteCard} 
+      databaseID={site._id} 
+      site={site} 
+      active={active} 
+      handleActive={handleActive} 
+      idx={idx}
+    />);
   };
 
   const loading = () => <div className="loader"></div>;
