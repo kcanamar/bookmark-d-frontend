@@ -2,7 +2,11 @@
 
 ### Live Site Link
 ---
-This Link
+[Netlify Link](https://kjbn-bookmarkd.netlify.app/)
+
+### Backend Repo
+---
+[Backend Repo](https://github.com/kcanamar/bookmark-d-mern) on Github
 
 ### Group Members
 ---
@@ -13,12 +17,23 @@ This Link
 
 ### Dependencies Used
 ---
-- List
+- React Router
+- React Router DOM
+- Sass
+- Styled-Components
+- React-Detect-Click-Outside
 
 ### Component Tree
 ---
-- Image
+![Component Tree](./src/images/component-tree.png)
 
 ### Component List
 ---
-- List of Components
+- Nav.js
+- Footer.js
+- Card.js
+- CardDropdown.js
+- Form.js
+- EditForm.js
+- StyledButton.js
+- Profile.js
