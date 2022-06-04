@@ -2,25 +2,28 @@ import { Link } from "react-router-dom"
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  display: flex;  
-  justify-content: center;
-  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+  display: flex;
   width: 100%;
-  margin: 0 auto;
+  align-items: center;
 
   a {
-    color: green;
+    color: FCA311;
     text-decoration: none;
   }
 
-  .link {
-    
+  .nav {
+    border: solid 2px black;
+    position: absolute;
+    right: 0;
+    top: 10;
   }
 
-  a:hover {
-    color: red;
+  .link {
+    text-align: center;
+    flex: 1 0 auto;
   }
-`
+`;
 
 export default function Nav() {
 
