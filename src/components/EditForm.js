@@ -1,5 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledForm = styled.form`
+  justify-content: center;
+  align-items: center;
+
+  input{
+    border-radius: 5px;
+  }
+
+  button{
+    border-radius: 5px;
+  }
+`
 
 export default function Form({ id }) {
   const URL = `https://kjbn-bookmarkd-mern.herokuapp.com/api/`;
@@ -31,10 +45,10 @@ export default function Form({ id }) {
   }
   
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <input onChange={handleChange} name="title" placeholder="Website Name" required/>
       <input onChange={handleChange} name="url" placeholder="https://" required/>
       <button type="submit">+</button>
-    </form>
+    </StyledForm>
   );
 }
