@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Form from '../components/Form';
 import Card from '../components/Card';
+
 const StyledMain = styled.main`
   card {
     display: block;
