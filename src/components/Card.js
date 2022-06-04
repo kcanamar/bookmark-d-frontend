@@ -3,7 +3,15 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
 `
-export default function Card({ site, idx, handleActive, active, databaseID, setBookmark}) {
+export default function Card({ 
+  site, 
+  idx, 
+  handleActive, 
+  active, 
+  databaseID, 
+  setBookmark, 
+  deleteCard
+}) {
   const { title, url } = site;
 
   return (
