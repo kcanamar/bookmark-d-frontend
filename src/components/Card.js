@@ -1,6 +1,6 @@
 import CardDropdown from "./CardDropdown";
 
-export default function Card({ site, idx, handleActive, active }) {
+export default function Card({ site, idx, handleActive, active, databaseID, setBookmark}) {
   const { title, url } = site;
 
   return (
@@ -11,7 +11,7 @@ export default function Card({ site, idx, handleActive, active }) {
         </a>
       </div>
       
-      <CardDropdown idx={idx} handleActive={handleActive} active={active}/>
+      <CardDropdown idx={idx} setBookmark={setBookmark} handleActive={handleActive} active={active} databaseID={databaseID} site={site}/>
     </div>
   );
 }
